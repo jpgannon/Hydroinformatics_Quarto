@@ -1,0 +1,110 @@
+# ACTIVITY Summative 1 {#Summative1}
+
+Get this document at the template repository on github: <https://github.com/VT-Hydroinformatics/8-Test_1>
+
+### Instructions
+
+Please read carefully!\
+
+Write your code in the provided code chunks and answer any questions by typing outside the chunk.
+
+Comment your code to let me know what you are trying to do, in case something doesn't work.
+
+Turn in a knitted rmd (html or pdf). If you can't get your document to knit when you go to turn it in, just comment out the lines of code that are causing the knit to fail, knit the document, and submit.
+
+## Problem 1
+Load the tidyverse, lubridate, and dataRetrieval packages.
+
+```{r}
+
+```
+
+## Problem 2
+Read in the McDonald Hollow dataset in the project folder.
+
+What are the data types of the first three columns?
+
+How long is the data (number of rows)?
+
+What is the name of the last column?
+
+```{r}
+
+```
+
+## Problem 3
+Plot the stage of the stream (Stage_m\_pt) on the y axis as a line and the date on the x. These stage data are in meters, convert them to centimeters for the plot.
+
+For all plots in this test, label axes properly and use a theme other than the default.
+
+```{r}
+
+```
+
+## Problem 4
+We want to look at the big event that happens from November 11, 2020 to November 27, 2020. Filter the dataset down to this time frame and save it separately. Make a plot with the same setup as in \#3 with these newly saved data.
+
+```{r}
+
+```
+
+## Problem 5
+For this storm, we are curious about how conductivity changes with the stream level. To do this, make a scatter plot that shows Stage on the x axis and specific conductivity (SpC_mScm) on the y. (units: mScm) Color the points on the plot using the datetime column. Use the plot to describe how specific conductivity changes with stream stage throughout the storm. (not functionally, just how the values change)
+
+```{r}
+
+```
+
+## Problem 6
+Continuing to look at the storm, as an exploratory data analysis, we want to create a plot that shows all the parameters measured. To do this, pivot the STORM EVENT data so there is a column that has the values for all the parameters measured as individual rows, along with another column that identifies the type of measurement. Then use facet_wrap with the "name" column (or whatever you call it) as the facet. Be sure to set the parameters of facet_wrap such that the y axes are all allowed to be different ranges.
+
+EX:\
+Date Value Name\
+10/1/20 12 Stage\
+10/1/20 6 Temp\
+....
+
+```{r}
+
+```
+
+## Problem 7
+We want to create a table that clearly shows the differences in water temperature for the three months at the two locations (flow and pool) in the FULL data set (not the storm subset). To do this: Create a new column in the full dataset called "month" and set it equal to the month of the datetime column using the month() function. Then group your dataset by month and summarize temperature at each location by mean. Save these results to a new object and output it so it appears below your chunk when you knit. Be sure the object has descriptive column names.
+
+You can do this all in one statement using pipes.
+
+```{r}
+
+
+```
+
+## Problem 8
+Plot the distribution of the flow temperature and show as vertical lines on the plot the mean, median, and IQR. Be careful about how you show IQR. Look at the definition and then think about how you would put it on the plot. Describe in the text above the chunk what color is what statistic in the plot. Using the shape of the distribution and the measures you plotted, explain why you think the distribution is normal or not. What statistical test could you perform to see if it is normal?
+
+```{r}
+
+```
+
+## Problem 9
+In this question we will get and format data for three USGS gages.
+
+Gages: 03177710, 03173000, 03177480\
+Discharge in cubic feet per second (cfs) code: 00060
+
+a. Read and save the gage information for the three gages using readNWISsite().
+
+b. Use the readNWISdv() function to read and save the daily discharge values for the following three gages for the 2020 water year (10-01-2019 to 9-30-2020). And then use the renameNWIScolumns() function to make the names human-friendly.
+
+c. Join the gage site information from (a) to the data from (b) so you can reference the gages by their names.
+
+```{r}
+
+```
+
+## Problem 10
+
+Using the data from \#9, Plot flow on the y axis and date on the x axis, showing the data as a line, and coloring by gage name.
+
+```{r}
+
+```
